@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Laptops</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f0f2f5;color:#222}
+header{background:#0b2166;color:#fff;padding:18px;text-align:center}header h1{margin:0}
+.container{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;padding:30px;max-width:1200px;margin:auto}
+.card{background:#fff;width:100%;padding:15px;text-align:center;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.12)}
+.card img{width:100%;height:170px;object-fit:contain;border-radius:8px;background:#fafafa}
+.card h3{color:#0b2166}.desc{min-height:40px;color:#555}
+button{padding:9px 14px;border:0;border-radius:7px;cursor:pointer;margin:4px;font-weight:bold}
+.cart-btn{background:#2874f0;color:white}.buy-btn{background:#4caf50;color:white}
+footer{text-align:center;padding:25px;background:#0b2166;margin-top:30px}footer a{color:white;text-decoration:none}
+@media(max-width:1000px){.container{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.container{grid-template-columns:repeat(2,1fr);padding:15px}}
+@media(max-width:450px){.container{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>Laptops</h1></header><div class="container"><div class="card">
+<img src="laptop1.jpg" alt="Lenovo">
+<h3>Lenovo</h3><p>₹75,000</p><p class="desc">Intel i7, 16GB RAM, 512GB SSD</p>
+<button class="cart-btn" onclick='addToCart({"name": "Lenovo", "category": "Laptop", "img": "laptop1.jpg", "price": "\u20b975,000", "desc": "Intel i7, 16GB RAM, 512GB SSD"})'>Add to Cart</button>
+<button class="buy-btn" onclick='buyNow({"name": "Lenovo", "category": "Laptop", "img": "laptop1.jpg", "price": "\u20b975,000", "desc": "Intel i7, 16GB RAM, 512GB SSD"})'>Buy Now</button>
+</div><div class="card">
+<img src="laptop2.jpg" alt="DELL">
+<h3>DELL</h3><p>₹81,000</p><p class="desc">AMD Ryzen 7, 16GB RAM, 1TB SSD</p>
+<button class="cart-btn" onclick='addToCart({"name": "DELL", "category": "Laptop", "img": "laptop2.jpg", "price": "\u20b981,000", "desc": "AMD Ryzen 7, 16GB RAM, 1TB SSD"})'>Add to Cart</button>
+<button class="buy-btn" onclick='buyNow({"name": "DELL", "category": "Laptop", "img": "laptop2.jpg", "price": "\u20b981,000", "desc": "AMD Ryzen 7, 16GB RAM, 1TB SSD"})'>Buy Now</button>
+</div><div class="card">
+<img src="laptop3.jpg" alt="HP">
+<h3>HP</h3><p>₹72,000</p><p class="desc">Intel i5, 8GB RAM, 512GB SSD</p>
+<button class="cart-btn" onclick='addToCart({"name": "HP", "category": "Laptop", "img": "laptop3.jpg", "price": "\u20b972,000", "desc": "Intel i5, 8GB RAM, 512GB SSD"})'>Add to Cart</button>
+<button class="buy-btn" onclick='buyNow({"name": "HP", "category": "Laptop", "img": "laptop3.jpg", "price": "\u20b972,000", "desc": "Intel i5, 8GB RAM, 512GB SSD"})'>Buy Now</button>
+</div><div class="card">
+<img src="laptop4.jpg" alt="ACER">
+<h3>ACER</h3><p>₹83,000</p><p class="desc">Gaming laptop, 16GB RAM, NVIDIA GPU</p>
+<button class="cart-btn" onclick='addToCart({"name": "ACER", "category": "Laptop", "img": "laptop4.jpg", "price": "\u20b983,000", "desc": "Gaming laptop, 16GB RAM, NVIDIA GPU"})'>Add to Cart</button>
+<button class="buy-btn" onclick='buyNow({"name": "ACER", "category": "Laptop", "img": "laptop4.jpg", "price": "\u20b983,000", "desc": "Gaming laptop, 16GB RAM, NVIDIA GPU"})'>Buy Now</button>
+</div><div class="card">
+<img src="laptop5.jpg" alt="Apple">
+<h3>Apple</h3><p>₹96,000</p><p class="desc">M1 Chip, Retina Display, 8GB RAM</p>
+<button class="cart-btn" onclick='addToCart({"name": "Apple", "category": "Laptop", "img": "laptop5.jpg", "price": "\u20b996,000", "desc": "M1 Chip, Retina Display, 8GB RAM"})'>Add to Cart</button>
+<button class="buy-btn" onclick='buyNow({"name": "Apple", "category": "Laptop", "img": "laptop5.jpg", "price": "\u20b996,000", "desc": "M1 Chip, Retina Display, 8GB RAM"})'>Buy Now</button>
+</div></div>
+<footer><a href="index.html">← Back to Home</a> | <a href="index.html">🛒 Open Cart</a></footer>
+<script>
+function addToCart(product){
+ let cart=JSON.parse(localStorage.getItem('cart')||'[]');
+ if(cart.some(p=>p.name===product.name)){alert(product.name+' is already in your cart.');return;}
+ cart.push(product);localStorage.setItem('cart',JSON.stringify(cart));alert(product.name+' added to cart!');
+}
+function buyNow(product){
+ localStorage.setItem('buyNow',JSON.stringify(product));window.location.href='index.html#checkout';
+}
+</script></body></html>

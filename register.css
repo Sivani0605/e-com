@@ -1,0 +1,59 @@
+body {
+        margin: 50px;
+        background-color: cadetblue;
+      }
+      .register-box {
+        max-width: 400px;
+        margin: 50px auto;
+        background:bisque;
+        padding: 30px;
+        border-radius: 10px;
+      }
+
+      .register-box h2 {
+        text-align: center;
+        color:black;
+      }
+      .register-box input{
+        width: 95%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+
+      .register-btn {
+        padding: 12px;
+        background-color:cadetblue;
+        color: #000;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s ease;
+      }
+      .login {
+        text-align: center;
+        margin-top: 15px;
+        color:black;
+      }
+
+      .login a {
+        color:cadetblue;
+        font-weight: bold;
+      }
+
+      .login a:hover {
+        text-decoration: underline;
+      }
+
+      textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  resize: none; 
+}
+  
